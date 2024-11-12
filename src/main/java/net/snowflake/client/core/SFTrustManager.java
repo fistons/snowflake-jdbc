@@ -981,7 +981,7 @@ public class SFTrustManager extends X509ExtendedTrustManager {
       ocspLog = telemetryData.generateTelemetry(SF_OCSP_EVENT_TYPE_VALIDATION_ERROR, error);
       if (isOCSPFailOpen()) {
         // Log includes fail-open warning.
-        logger.error(generateFailOpenLog(ocspLog), false);
+        logger.warn(generateFailOpenLog(ocspLog), false);
       } else {
         // still not success, raise an error.
         logger.debug(ocspLog, false);
